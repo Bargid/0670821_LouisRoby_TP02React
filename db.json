@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Birkenstock Sandytrals",
+      "price": "120$",
+      "description": "The legendary two-strap design from BIRKENSTOCK with an amplified buckle accent - the Arizona Big Buckle. This version features a large, elegant buckle creating a bold yet minimalist design. Shown in nubuck leather. ",
+      "category": "Wearable",
+      "reminder": true,
+      "isEditing": true
+    },
+    {
+      "id": 2,
+      "title": "One Piece Full Collection",
+      "price": "1200$",
+      "description": "The series focuses on Monkey D. Luffy—a young man made of rubber after unintentionally eating a Devil Fruit—who sets off on a journey from the East Blue Sea to find the deceased King of the Pirates Gol D. Roger's ultimate treasure known as the 'One Piece', and takeover his prior title.",
+      "category": "Book",
+      "reminder": true,
+      "isEditing": true
+    },
+    {
+      "id": 2,
+      "title": "Logitech M705 Marathon",
+      "price": "49.99$",
+      "description": "Designed for Comfort: Sculpted with comfort in mind, your wireless computer mouse follows the natural curve of your right hand, and all controls are within your reach.",
+      "category": "Computer Accessory",
+      "reminder": true,
+      "isEditing": true
+    }
+  ]
+}

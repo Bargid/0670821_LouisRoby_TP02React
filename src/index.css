@@ -1,13 +1,298 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Tsukimi+Rounded:wght@500&display=swap');
+
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 5px;
+  width: 700px;
+}
+
+.produit {
+  display: flex;
+  background-color: lightgray;
+
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+.produit h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.produit-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.produit-info p {
+  margin-bottom: 0px;
+}
+
+.produit-description {
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.produit-description p {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pourx {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.pourx svg {
+  width: 22px;
+  height: 22px;
+}
+
+.delete, .modifier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 36px;
+  color: white;
+  width: 60px;
+  height: 60px;
+
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #d9381e;
+}
+
+.modifier {
+  background-color: rgb(126, 187, 34);
+}
+
+.modif-supprimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+/* ========= Header =========== */
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  font-size: 48px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ========== Button ========== */
+
+.button-add {
+  text-align: center;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+
+  margin-top: 40px;
+
+  padding: 5px 15px;
+  height: 40px;
+  width: 100px;
+
+  cursor: pointer;
+}
+
+.button-ajouter, .button-annuler {
+  text-align: center;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+
+  padding: 5px 15px;
+  height: 40px;
+  width: 200px;
+}
+
+.button-ajouter {
+  background-color: rgb(126, 187, 34);
+  margin-bottom: 0;
+}
+
+.button-annuler {
+  background-color: #d9381e;
+}
+
+/* ========== form ========== */
+
+.add-form {
+  margin-top: 0px;
+  border: solid 1px black;
+  border-radius: 5px;
+
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  background-image: url('../public/images/background_creation.png');
+}
+
+.complete-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.left-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.produit-box, .prix-box, .categorie-box {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.produit-box label, .prix-box label, .categorie-box label {
+  margin-right: 5px;
+}
+
+input {
+  flex-grow: 1;
+}
+
+.textarea-wrapper textarea {
+  white-space: pre-wrap;
+}
+
+/* ========== Modal ========== */
+
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 9999; /* Ensure the modal appears on top of other content */
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  width: 560px;
+  max-width: 90%;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10000; /* Ensure the modal appears on top of the overlay */
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* ========== layout ========== */
+
+.header-menu,
+footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+
+    /* background-color: #009879; */
+    background-color: #992800;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.header-menu {
+    margin-bottom: 50px;
+    justify-content: space-evenly;
+}
+
+footer {
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.header-menu a {
+    color: white;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.header-menu a:hover {
+    color: lightgrey;
+}
+
+.logo p {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
